@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Post.scss";
 import { posts } from "../data";
+import { useLocation } from "react-router-dom";
 function Post() {
-  const post = posts[2];
+  const location = useLocation().pathname.split("/").pop();
+
+  const post = posts.find((post) => post.id.toString() === location);
+  console.log(post);
   return (
     <div className="post">
       <img src={post.img} alt="" className="post_img" />

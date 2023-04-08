@@ -3,28 +3,28 @@ import "./App.scss";
 import Home from "./pages/Home";
 import Post from "./pages/Post";
 import Login from "./pages/Login";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, Navigate } from "react-router-dom";
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Home />,
-    },
-    {
-      path: "/post/:id",
-      element: <Post />,
-    },
-    {
-      path: "/login",
-      element: <Login />,
-    },
-  ]);
+  const userLoged = true;
+
   return (
-    <div className="App">
-      <Navbar />
-      <RouterProvider router={router} />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar user={userLoged} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route
+            path="/post/:id"
+            element={userLoged ? <Post /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/login"
+            element={userLoged ? <Navigate to="/" /> : <Login />}
+          />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
