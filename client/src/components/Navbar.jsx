@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import "./NavBar.scss";
 
 function NavBar({ user }) {
+  const logout = () => {
+    window.open("http://localhost:5000/auth/logout", "_self");
+  };
   return (
     <div className="navbar">
       <span className="logo">
@@ -13,15 +16,12 @@ function NavBar({ user }) {
       {user ? (
         <ul className="list">
           <li className="list_item">
-            <img
-              src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg"
-              alt=""
-              className="avatar"
-            />
+            <img src={user.photos[0].value} alt="" className="avatar" />
           </li>
-          <li className="list_item">Matteo Grigoletto</li>
-          <li className="list_item">
-            <Link to="/login">Esci</Link>
+          <li className="list_item">{user.displayName}</li>
+
+          <li className="list_item" onClick={logout}>
+            Esci
           </li>
         </ul>
       ) : (

@@ -8,7 +8,9 @@ function Login() {
   const google = () => {
     window.open("http://localhost:5000/auth/google", "_self");
   };
-
+  const github = () => {
+    window.open("http://localhost:5000/auth/github", "_self");
+  };
   return (
     <div className="login">
       <h1 className="login_title"> Scegli come accedere</h1>
@@ -22,7 +24,7 @@ function Login() {
             <img src={facebookImg} alt="" className="icon" />
             facebook
           </div>
-          <div className="login_button github">
+          <div className="login_button github" onClick={github}>
             <img src={githubImg} alt="" className="icon" />
             github
           </div>
