@@ -1,25 +1,29 @@
 import React from "react";
 import "./Login.scss";
-import google from "../img/google.png";
-import facebook from "../img/facebook.png";
-import github from "../img/github.png";
+import googleImg from "../img/google.png";
+import facebookImg from "../img/facebook.png";
+import githubImg from "../img/github.png";
 
 function Login() {
+  const google = () => {
+    window.open("http://localhost:5000/auth/google", "_self");
+  };
+
   return (
     <div className="login">
       <h1 className="login_title"> Scegli come accedere</h1>
       <div className="wrapper">
         <div className="left">
-          <div className="login_button google">
-            <img src={google} alt="" className="icon" />
+          <div className="login_button google" onClick={google}>
+            <img src={googleImg} alt="" className="icon" />
             google
           </div>
           <div className="login_button facebook">
-            <img src={facebook} alt="" className="icon" />
+            <img src={facebookImg} alt="" className="icon" />
             facebook
           </div>
           <div className="login_button github">
-            <img src={github} alt="" className="icon" />
+            <img src={githubImg} alt="" className="icon" />
             github
           </div>
         </div>
