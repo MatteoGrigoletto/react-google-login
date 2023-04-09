@@ -24,78 +24,47 @@
       0px 10px 15px -3px rgba(0, 0, 0, 0.1),
       0px 10px 15px -3px rgba(0, 0, 0, 0.1);
   }
-  .left,
-  .right {
+  .left {
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  &_button {
-    width: 150px;
-    padding: 15px 25px;
-    border-radius: 5px;
-    color: white;
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-    margin-bottom: 20px;
 
-    .icon {
-      width: 20px;
-      height: 20px;
-      margin-right: 10px;
+    .google {
+      background-color: rgb(250, 90, 4);
     }
-  }
-  .google {
-    background-color: rgb(250, 90, 4);
-  }
-  .facebook {
-    background-color: rgb(25, 20, 166);
-  }
-  .github {
-    background-color: rgb(2, 50, 50);
-  }
-  input {
-    width: 200px;
-    padding: 15px 20px;
-    margin-bottom: 20px;
-  }
-  .submit {
-    width: 200px;
-    background-color: rgb(21, 198, 142);
-    color: white;
-    font-weight: bold;
-    border: none;
-    padding: 15px 20px;
-    border-radius: 5px;
-  }
-  .center {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-
-    .line {
-      position: absolute;
-      width: 0.5px;
-      height: 70%;
-      background-color: gray;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      margin: auto;
-      z-index: -1;
+    .facebook {
+      background-color: rgb(25, 20, 166);
     }
-    .or {
-      border: 2px solid gray;
-      border-radius: 50%;
-      padding: 10px;
-      color: gray;
-      background: white;
+    .github {
+      background-color: rgb(2, 50, 50);
+    }
+    .button {
+      width: 40%;
+      padding: 25px 25px;
+      border-radius: 5px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-weight: bold;
+      margin-bottom: 20px;
+      cursor: pointer;
+      box-shadow: 14px 0px 32px 25px rgba(0, 0, 0, 0.1),
+        0px 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0px 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0px 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0px 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+      &:hover {
+        transform: scale(1.1);
+      }
+      .icon {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+      }
     }
   }
 }

@@ -10,7 +10,7 @@ function NavBar({ user }) {
     <div className="navbar">
       <span className="logo">
         <Link className="link" to="/">
-          app
+          HOME
         </Link>
       </span>
       {user ? (
@@ -25,7 +25,13 @@ function NavBar({ user }) {
           </li>
         </ul>
       ) : (
-        <Link to="/login">Accedi</Link>
+        <ul className="login">
+          <li>
+            <Link className="login_link" to="/login">
+              Accedi
+            </Link>
+          </li>
+        </ul>
       )}
     </div>
   );
