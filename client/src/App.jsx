@@ -5,6 +5,7 @@ import Post from "./pages/Post";
 import Login from "./pages/Login";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import BgAnimated from "./components/BgAnimated";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -35,8 +36,9 @@ const App = () => {
   }, []);
 
   return (
-    <BrowserRouter>
-      <div>
+    <div className="container">
+      <BgAnimated />
+      <BrowserRouter>
         <Navbar user={user} />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -49,8 +51,8 @@ const App = () => {
             element={user ? <Post /> : <Navigate to="/login" />}
           />
         </Routes>
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </div>
   );
 };
 
